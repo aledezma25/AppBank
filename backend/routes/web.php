@@ -19,5 +19,5 @@ Route::post("/usuarios", [UsersController::class, "store"])->name('usuarios.stor
 Route::get("/usuarios/{id}", [UsersController::class, "show"])->name('usuarios.show');
 Route::put("/usuarios/{id}", [UsersController::class, "update"])->name('usuarios.update');
 Route::delete("/usuarios/{id}", [UsersController::class, "destroy"])->name('usuarios.destroy');
-Route::get("/usuarios/{id}/edit", [UsersController::class, "edit"])->name('usuarios.edit');
+Route::get("/usuarios/{id}", [UsersController::class, "edit"])->name('usuarios.edit');
 

@@ -79,7 +79,8 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        return view("users.edit", ["user" => $user]);
     }
 
     /**
@@ -91,7 +92,14 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id);
+        $user -> name = $request -> name;
+        $user -> last_name = $request -> last_name;
+        $user -> phone_number = $request -> phone_number;
+        $user -> email = $request -> email;
+        $user -> password = bcrypt($request -> password);
+        $user -> save();
+        return redirect()->route("usuarios.index")->with("success", "Usuario actualizado exitosamente");
     }
 
     /**

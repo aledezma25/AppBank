@@ -41,11 +41,11 @@
             </div>
             <div class="form-group">
                 <label for="password">Password:
-                <input type="text" name="password" id="password" placeholder="Password" class="form-control" ></label>
+                <input type="password" name="password" id="password" placeholder="Password" class="form-control" ></label>
             </div>
             <div class="form-group">
                 <label for="password_confirmation">Confirm Password:
-                <input type="text" name="password_confirmation" id="password_confirmation" placeholder="Confirm Password" class="form-control" ></label>
+                <input type="password" name="password_confirmation" id="password_confirmation" placeholder="Confirm Password" class="form-control" ></label>
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-success">Enviar</button>
