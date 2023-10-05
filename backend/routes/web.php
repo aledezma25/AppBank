@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,10 @@ use App\Http\Controllers\UsersController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route :: get ('/', function () {
+    return view ('welcome');
+});
+
 
 Route::get("/usuarios", [UsersController::class, "index"])->name('usuarios.index');
 Route::post("/usuarios", [UsersController::class, "store"])->name('usuarios.store');
@@ -21,3 +26,7 @@ Route::put("/usuarios/{id}", [UsersController::class, "update"])->name('usuarios
 Route::delete("/usuarios/{id}", [UsersController::class, "destroy"])->name('usuarios.destroy');
 Route::get("/usuarios/{id}", [UsersController::class, "edit"])->name('usuarios.edit');
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
