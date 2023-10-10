@@ -14,8 +14,14 @@ class CreditsController extends Controller
      */
     public function index()
     {
-        //
+        $credits = Credit::all();
+        return response()->json([
+            'success' => true,
+            'message' => 'Listado de créditos',
+            'data' => $credits
+        ], 200);
     }
+
 
     /**
      * Show the form for creating a new resource.

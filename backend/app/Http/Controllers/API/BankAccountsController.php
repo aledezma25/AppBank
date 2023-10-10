@@ -14,18 +14,10 @@ class BankAccountsController extends Controller
      */
     public function index()
     {
-        //
+        $bankaccounts = BankAccount::all();
+        return response()->json($bankaccounts);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
